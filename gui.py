@@ -1,5 +1,7 @@
 from PyQt6.QtWidgets import QWidget, QPushButton, QLabel
-from variables import temperature, room_temperature
+from variables import temperature, room_temperature, heat
+import button
+
 import logging
 
 var_temp = 10
@@ -16,11 +18,13 @@ class Gui(QWidget):
         self.title = title
         self.temperature = temperature
         self.room_temperature = room_temperature
+        self.heat = heat
 
-        btn = QPushButton("", self)
-        btn.setGeometry(160, 140, 150, 150)
-        btn.setStyleSheet("border-radius: 75%; background-color: red")
-        # btn.clicked.connect(self.test)
+
+        self.btn = QPushButton("", self)
+        self.btn.setGeometry(180, 140, 150, 150)
+        # self.btn.setCheckable(self.heat)
+        self.btn.clicked.connect(self.heat_status)
 
         btn_increment = QPushButton("+", self)
         btn_increment.setGeometry(110,90, 30, 30)
@@ -28,6 +32,11 @@ class Gui(QWidget):
 
         btn_decrement = QPushButton("-", self)
         btn_decrement.setGeometry(50,90, 30, 30)
+        if(self.heat == True):
+            self.btn.setStyleSheet("border-radius: 75%; background-color: green")
+
+        else:
+            self.btn.setStyleSheet("border-radius: 75%; background-color: red")
         btn_decrement.clicked.connect(self.decrement_temperature)
 
         set_label = QLabel("Set:", self)
@@ -47,9 +56,13 @@ class Gui(QWidget):
         self.temperature_label.move(90, 50)
         self.temperature_label.setStyleSheet("font-size: 20px")
 
-        heat_label = QLabel("Heat:", self)
-        heat_label.move(200,300)
-        heat_label.setStyleSheet("font-size: 20px")
+        if self.heat == True:
+            self.heat_label = QLabel(f"Heat: On", self)
+        else:
+            self.heat_label = QLabel(f"Heat: Off", self)
+
+        self.heat_label.move(215,300)
+        self.heat_label.setStyleSheet("font-size: 20px")
 
 
     def build(self):
@@ -73,9 +86,27 @@ class Gui(QWidget):
         logging.debug(self.temperature)
         self.temperature_label.setText(f"{self.temperature} C")
 
+    def heat_status(self):
+ 
+        logging.debug(f" it is {self.heat}")
 
-    # def print(self, temp):
-    #     self.room_temperature_label.setText(f"{temp} C")
+        if self.heat == False:
+            logging.debug("entry in False")
+            self.btn.setStyleSheet("border-radius: 75%; background-color: green")
+            self.heat_label.setText(f"Heat: On")
+            self.heat = True
+            logging.debug(f"Becomes {self.heat}")
+
+        elif self.heat == True:
+            logging.debug("entry in True")
+            self.btn.setStyleSheet("border-radius: 75%; background-color: red")
+
+            self.heat_label.setText(f"Heat: Off")
+            self.heat = False
+            logging.debug(f"Becomes {self.heat}")
+
+
+
 
 
 
