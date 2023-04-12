@@ -1,6 +1,5 @@
 from PyQt6.QtWidgets import QWidget, QPushButton, QLabel
 from variables import temperature, room_temperature, heat
-import button
 
 import logging
 
