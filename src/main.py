@@ -7,6 +7,7 @@ from PyQt6.QtWidgets import QApplication
 
 def main():
     print("Hello")
+    
 
 
 if __name__ == "__main__":
