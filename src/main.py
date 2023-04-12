@@ -1,14 +1,16 @@
 print("branch development")
-print("test")
+print("sqlite3")
+print("devo")
+
 
 import gui
 import sys
 from PyQt6.QtWidgets import QApplication
 
 def main():
-    print("Hello")
+    print("Hello sunt sqlite21121232")
     
-
+    
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
