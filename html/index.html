@@ -1,7 +1,39 @@
-<html>
- <head>
- </head>
- <body>
-   <h1>Hello World<h1>
- </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main_container">
+    <div class="title">
+      <h2>Home Heating Automation</h2>
+    </div>
+    <div class="container">
+      <div class="details_container">
+        <div style="text-align: center;">
+          <h2>Set</h2>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <button id="decrease" class="btn">-</button>
+          <button id="increase" class="btn">+</button>
+        </div>
+        <h2 style="text-align: center;" id="counter">10</h2>
+      </div>
+      <div class="room_container">
+        <div style="text-align: center;">
+          <h2>Room</h2>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <h3>20 C</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
+
+<script src="javascript/main.js"></script>
