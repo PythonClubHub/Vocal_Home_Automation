@@ -1,4 +1,7 @@
 import sqlite3
+import logging
+
+logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 
 connection = sqlite3.connect('data.db')
 
@@ -14,8 +17,14 @@ c.execute('''CREATE TABLE IF NOT EXISTS temperature
                 humidity INTEGER
         )''')
 
+#insert data into the table
+c.execute("INSERT INTO temperature (date, hour, temeperature, humidity) VALUES ('23.04.2023','16:10', 17, 8)")
 
-c.execute("INSERT INTO temperature (date, hour, temeperature, humidity) VALUES ('13.04.2023','10:03', 20, 5)")
+# retrieve data from the table
+c.execute("SELECT * FROM temperature")
+row = c.fetchall()
+
+logging.debug(row)
 
 # commit the transaction
 connection.commit()
