@@ -133,8 +133,9 @@ test.*
 *.txt
 *.log
 test/
-database/
+database/data.db
 
 # dont't ignore
 !License.txt
 !photo.png
+data.db
