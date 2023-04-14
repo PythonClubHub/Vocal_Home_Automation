@@ -45,3 +45,15 @@
     height: 40px;
 }
 
+.grafic_data{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* padding: 30px 100px; */
+    margin-top: 30px;
+}
+
+
+
