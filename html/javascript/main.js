@@ -7,14 +7,13 @@ const counter = document.getElementById("counter");
 
 const fecth_setTemperature = async () => {
     try {
-        const res = await fetch("http://127.0.0.1:5000/");
-        const data = await res.json()
+        const res2 = await fetch("http://127.0.0.1:5000/data");
+        const data2 = await res2.json();
 
-        console.log(data);
-        console.log(data[0]);
-        console.log(data[0][5]);
+        console.log(data2);
+        console.log(data2[0][1]);
 
-        counter.textContent = data[0][5];
+        counter.textContent = data2[0][1];
         
     } catch (error) {
         console.log(error);
