@@ -59,5 +59,38 @@ def change_temp():
     return jsonify({'message': 'Temperature updated successfully'})
 
 
+@app.route('/turn_on', methods = ['POST'])
+def turn_on():
+    status = request.json.get('on')
+    connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+
+    cursor = connection.cursor()
+
+    cursor.execute(f'''
+        UPDATE temp_table SET status = {status} WHERE id = 1
+    ''')
+
+    connection.commit()
+    connection.close()
+
+    return jsonify({'message': 'Turn On successfully'})
+
+@app.route('/turn_off', methods = ['POST'])
+def turn_off():
+    status = request.json.get('off')
+    connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+
+    cursor = connection.cursor()
+
+    cursor.execute(f'''
+        UPDATE temp_table SET status = {status} WHERE id = 1
+    ''')
+
+    connection.commit()
+    connection.close()
+
+    return jsonify({'message': 'Turn On successfully'})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
