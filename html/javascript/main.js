@@ -4,6 +4,7 @@ const fragment = document.createDocumentFragment();
 
 const counter = document.getElementById("counter");
 const temp_text = document.getElementById("temp_text");
+const status_heating = document.getElementById("status_heating");
 
 const fecth_setTemperature = async () => {
     try {
@@ -22,6 +23,16 @@ const fecth_setTemperature = async () => {
 
         console.log(data2);
         console.log(data2[0][1]);
+        let status = data2[0][2];
+        console.log(status);
+
+        if(status == 1){
+            status_heating.textContent = 'The heating is ON';
+        }
+
+        if(status == 0){
+            status_heating.textContent = 'The heating is OFF';
+        }
 
         counter.textContent = data2[0][1];
         
