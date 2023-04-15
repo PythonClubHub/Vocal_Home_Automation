@@ -2,6 +2,27 @@ const btn_press = document.getElementById("btn_press");
 const container_data = document.getElementById("container_data");
 const fragment = document.createDocumentFragment();
 
+const counter = document.getElementById("counter");
+
+
+const fecth_setTemperature = async () => {
+    try {
+        const res = await fetch("http://127.0.0.1:5000/");
+        const data = await res.json()
+
+        console.log(data);
+        console.log(data[0]);
+        console.log(data[0][5]);
+
+        counter.textContent = data[0][5];
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fecth_setTemperature()
+
 btn_press.addEventListener('click', async () => {
     
     try {
