@@ -24,6 +24,23 @@ def home():
 
     return jsonify(rows)
 
+@app.route('/data', methods = ['GET'])
+def data():
+    # return jsonify({'message': 'home'})
+    connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+
+    cursor = connection.cursor()
+
+    cursor.execute('''
+        SELECT * FROM temp_table
+    ''')
+
+    rows = cursor.fetchall()
+
+    connection.close()
+
+    return jsonify(rows)
+
 
 @app.route('/update_temperature', methods = ['POST'])
 def change_temp():
@@ -33,7 +50,7 @@ def change_temp():
     cursor = connection.cursor()
 
     cursor.execute(f'''
-        UPDATE temperature SET set_temperature = {temperature} WHERE local_home = 'home'
+        UPDATE temp_table SET temperature = {temperature} WHERE id = 1
     ''')
 
     connection.commit()
