@@ -18,7 +18,7 @@ c = connection.cursor()
 #         )''')
 
 #insert data into the table
-c.execute("INSERT INTO temperature (date, hour, temeperature, humidity) VALUES ('30.04.2023','12:55', 18, 2)")
+c.execute("INSERT INTO temperature (date, hour, temeperature, humidity) VALUES ('10.05.2023','13:55', 10, 13)")
 
 # retrieve data from the table
 # c.execute("SELECT * FROM temperature")
