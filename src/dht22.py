@@ -6,10 +6,9 @@ class dht_sensor:
     def __init__(self, temp, humid):
         self.temp = temp
         self.humid = humid
+        dht_sensor22 = Adafruit_DHT.DHT22
+        dht_pin = 4
 
-dht_sensor22 = Adafruit_DHT.DHT22
-
-dht_pin = 4
 
 while True:
     humidity, temperature = Adafruit_DHT.read_retry(dht_sensor22, dht_pin)
