@@ -3,8 +3,9 @@ import Adafruit_DHT
 
 
 class dht_sensor:
-    ...
-
+    def __init__(self, temp, humid):
+        self.temp = temp
+        self.humid = humid
 
 dht_sensor22 = Adafruit_DHT.DHT22
 
