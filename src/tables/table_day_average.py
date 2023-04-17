@@ -9,16 +9,15 @@ connection = sqlite3.connect('database/data.db')
 c = connection.cursor()
 
 # execute a query to create a new table
-# c.execute('''CREATE TABLE IF NOT EXISTS temperature
+# c.execute('''CREATE TABLE IF NOT EXISTS average_data
 #              (id INTEGER PRIMARY KEY,
 #                 date TEXT,
-#                 hour TEXT, 
-#                 temeperature INTEGER,
-#                 humidity INTEGER
+#                 avg_temeperature INTEGER,
+#                 avg_humidity INTEGER
 #         )''')
 
 #insert data into the table
-c.execute("INSERT INTO temperature (date, hour, temeperature, humidity) VALUES ('10.05.2023','13:55', 10, 13)")
+c.execute("INSERT INTO day_average (date, avg_temeperature, avg_humidity) VALUES ('17.04.2023', 20, 50)")
 
 # retrieve data from the table
 # c.execute("SELECT * FROM temperature")

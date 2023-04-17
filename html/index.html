@@ -34,6 +34,7 @@
         </div>
         <div>
           <h3 id="temp_text"></h3>
+          <h3 id="humidity_text"></h3>
         </div>
       </div>
     </div>
@@ -42,6 +43,18 @@
       <div>
         <button id="btn_on" class="btn_on">Turn On</button>
         <button id="btn_off" class="btn_off">Turn Off</button>
+      </div>
+    </div>
+    <div class="average_container">
+      <div class="week_avg">
+        <h3>Week average</h3>
+        <h3 id="avg_temp_week"></h3>
+        <h3 id="avg_humidity_week"></h3>
+      </div>
+      <div class="day_avg">
+        <h3>Day average</h3>
+        <h3 id="avg_temp"></h3>
+        <h3 id="avg_humidity"></h3>
       </div>
     </div>
     <div>
@@ -64,3 +77,4 @@
 <script src="javascript/chart_humidity.js"></script>
 <script src="javascript/set_temperatures.js"></script>
 <script src="javascript/heating_status.js"></script>
+<script src="javascript/average_temp.js"></script>

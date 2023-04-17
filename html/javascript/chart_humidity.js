@@ -8,7 +8,7 @@ const fetchData2 = async () => {
         const data = await res.json();
 
         data.forEach(item => {
-            all_humidity.push(item[4]);
+            all_humidity.push(item[3]);
         });
 
         humidity = all_humidity.slice(-7);
