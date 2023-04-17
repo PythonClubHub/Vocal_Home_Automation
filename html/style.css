@@ -138,6 +138,21 @@
     margin-bottom: 10px;
 }
 
+.average_container{
+    background-color: gainsboro;
+
+    display: flex;
+}
+
+.week_avg{
+    width: 50%;
+    background-color: antiquewhite;
+}
+
+.day_avg{
+    width: 50%;
+    background-color: aqua;
+}
 
 @media screen and (max-width: 680px) {
     .cont{
