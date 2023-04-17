@@ -16,7 +16,7 @@ const fecth_setTemperature = async () => {
         let lastElement = data[data.length - 1];
         console.log(lastElement);
 
-        temp_text.textContent = lastElement[3];
+        temp_text.textContent = `${lastElement[3]} ° C `;
 
         const res2 = await fetch("http://127.0.0.1:5000/data");
         const data2 = await res2.json();
@@ -34,7 +34,7 @@ const fecth_setTemperature = async () => {
             status_heating.textContent = 'The heating is OFF';
         }
 
-        counter.textContent = data2[0][1];
+        counter.textContent = `${data2[0][1]} ° C `;
         
     } catch (error) {
         console.log(error);
