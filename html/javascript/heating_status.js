@@ -4,6 +4,40 @@ const btn_off = document.getElementById("btn_off");
 let on = 1;
 let off = 0;
 
+let heating_status = 0;
+
+// ----- fetch the status of the heating system -----------------------------
+const fecth_status = async () => {
+    try {
+        const res2 = await fetch("http://127.0.0.1:5000/data");
+        const data2 = await res2.json();
+
+        console.log(data2);
+        console.log(data2[0][1]);
+        heating_status = data2[0][2];
+        console.log(heating_status);
+
+        if(heating_status == 1){
+            console.log("on");
+            btn_on.disabled = true;
+            btn_on.style.backgroundColor = "#0dd15877";
+        }
+
+        if(heating_status == 0){
+            console.log("off");
+            btn_off.disabled = true;
+            btn_off.style.backgroundColor = "#fb414480";
+        }
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fecth_status();
+
+
+// -------- turn ON the heating system and send the value to the database ------------------
 btn_on.addEventListener("click", async () => {
     console.log('on');
 
@@ -27,6 +61,8 @@ btn_on.addEventListener("click", async () => {
     }
 })
 
+
+// -------- turn OFF the heating system and send the value to the database ------------------
 btn_off.addEventListener("click", async () => {
     console.log('off');
 
