@@ -1,20 +1,29 @@
 
-const set = document.getElementById("set");
+const btn_set = document.getElementById("btn_set");
 const ok_btn = document.getElementById("ok_btn");
+const btn_test = document.getElementById("btn_test");
+// const input_temp = document.getElementById("temperatura")
 
-const temperatura = document.getElementById("temperatura");
+const input_temp = document.getElementById("temperatura");
 
 
 let temperature = 0
 
-
-ok_btn.addEventListener("click", () => {
-    temperature = parseInt(temperatura.value);
-    console.log(temperature);
+input_temp.addEventListener("change", () => {
+    btn_set.style.backgroundColor = "#0274d8ba";
+    btn_set.disabled = true;
 })
 
-set.addEventListener("click", async (e) => {
-    console.log("set clicked!");
+
+ok_btn.addEventListener("click", () => {
+    temperature = parseInt(input_temp.value);
+    console.log(temperature);
+    btn_set.style.backgroundColor = "#0275d8";
+    btn_set.disabled = false;
+})
+
+btn_set.addEventListener("click", async (e) => {
+    console.log("btn_set clicked!");
 
     counter.innerHTML = temperature;
 
