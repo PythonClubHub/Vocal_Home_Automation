@@ -9,7 +9,7 @@ const fetchData = async () => {
         const data = await res.json();
 
         data.forEach(item => {
-            all_temperatues.push(item[3]);
+            all_temperatues.push(item[2]);
         });
 
         temperatures = all_temperatues.slice(-7);
