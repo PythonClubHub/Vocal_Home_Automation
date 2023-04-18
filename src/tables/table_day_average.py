@@ -17,7 +17,9 @@ c = connection.cursor()
 #         )''')
 
 #insert data into the table
-c.execute("INSERT INTO day_average (date, avg_temeperature, avg_humidity) VALUES ('17.04.2023', 20, 50)")
+# c.execute("INSERT INTO day_average (date, avg_temeperature, avg_humidity) VALUES ('17.04.2023', 20, 50)")
+# c.execute(("DELETE FROM day_average"))
+c.execute("DELETE FROM day_average WHERE id = 4")
 
 # retrieve data from the table
 # c.execute("SELECT * FROM temperature")
