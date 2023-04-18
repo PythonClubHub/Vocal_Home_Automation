@@ -23,10 +23,11 @@ def insert_data():
 
     today = date.today()
     # current_date = today.strftime("%d.%m.%Y")
-    current_date = '27.05.2023'
+    current_date = '24.05.2023'
     logging.debug(f"current date = {current_date}")
 
-    connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
 
     # create a cursor object
     c = connection.cursor()
@@ -44,7 +45,7 @@ def insert_data():
     c.execute("INSERT INTO temperature (date, hour, temperature, humidity) VALUES (?, ? , ?, ?)", (current_date, current_time, random_temp, random_humidity))
 
     # c.execute("DELETE FROM temperature WHERE id >= 18 AND id <= 266")
-
+    # c.execute("DELETE FROM temperature")
     # retrieve data from the table
     # c.execute("SELECT * FROM temperature")
     # row = c.fetchall()

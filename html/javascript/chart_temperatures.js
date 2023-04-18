@@ -14,8 +14,9 @@ const fetchData = async () => {
 
         temperatures = all_temperatues.slice(-7);
 
-        console.log(data);
-        console.log(all_temperatues);
+        // console.log(data);
+        // console.log(all_temperatues);
+        console.log(`tem_week_data ${temperatures}`);
         console.log(temperatures);
 
         const ctx = document.getElementById("myChart");

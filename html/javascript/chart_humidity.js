@@ -13,8 +13,9 @@ const fetchData2 = async () => {
 
         humidity = all_humidity.slice(-7);
 
-        console.log(data);
-        console.log(all_humidity);
+        // console.log(data);
+        // console.log(all_humidity);
+        console.log(`humidity_week_data ${humidity}`);
         console.log(humidity);
 
         const ctx = document.getElementById("myChart2");

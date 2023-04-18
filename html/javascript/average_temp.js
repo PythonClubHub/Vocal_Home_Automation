@@ -34,25 +34,30 @@ const avg_humidity_week = document.getElementById("avg_humidity_week");
             humidity_data_day.push(item[2]);
         });
 
-        temp_data_day = temp_data_day.slice(-7);
-        humidity_data_day = humidity_data_day.slice(-7);
+        // temp_data_day = temp_data_day.slice(-7);
+        // humidity_data_day = humidity_data_day.slice(-7);
 
         console.log(temp_data_day);
         console.log(humidity_data_day);
 
+        let i = 0;
+        let j = 0;
+
         temp_data_day.forEach(temp => {
-            average_temp = average_temp + temp
+            average_temp = average_temp + temp;
+            i++;
         });
 
         humidity_data_day.forEach(humidity => {
-            average_humidity = average_humidity + humidity
+            average_humidity = average_humidity + humidity;
+            j++;
         });
 
-        average_temp = average_temp / 7;
+        average_temp = average_temp / i;
         average_temp = average_temp.toFixed(1);
         // console.log(average_temp);
 
-        average_humidity = average_humidity / 7;
+        average_humidity = average_humidity / j;
         average_humidity = average_humidity.toFixed(1);
         // console.log(average_humidity);
 
