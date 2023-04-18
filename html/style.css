@@ -209,6 +209,7 @@
 
     .average_container{
         flex-direction: column;
+        gap: 50px;
     }
 
     .week_avg{
