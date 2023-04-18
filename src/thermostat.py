@@ -8,7 +8,7 @@ class Thermostat():
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         GPIO.setup(self.relay_pin,GPIO.OUT)
-        sensor = dht22.dht_sensor
+        self.sensor = dht22.dht_sensor()
 
 
     def get_temperature_threshold(self):
@@ -30,4 +30,4 @@ class Thermostat():
             print("Relay is off")
 
     def compare_temp_with_threshold(self):
-        ...
+        print(f"Temperature {self.sensor.get_t}, threshold {self.threshold_temperature}")
