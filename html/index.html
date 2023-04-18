@@ -30,11 +30,11 @@
       </div>
       <div id="details_border" class="details_container">
         <div>
-          <h2>Room</h2>
+          <h2 style="margin-bottom: 20px;">Room</h2>
         </div>
         <div>
-          <h3 id="temp_text"></h3>
-          <h3 id="humidity_text"></h3>
+          <i class="fa-solid fa-temperature-half"></i><h3 style="display: inline; margin-left: 10px;" id="temp_text"></h3><br>
+          <i class="fa-solid fa-droplet"></i><h3 style="display: inline; margin-left: 10px" id="humidity_text"></h3>
         </div>
       </div>
     </div>
@@ -47,24 +47,25 @@
     </div>
     <div class="average_container">
       <div class="week_avg">
-        <h3>Week average</h3>
-        <h3 id="avg_temp_week"></h3>
-        <h3 id="avg_humidity_week"></h3>
+        <h3 style="margin-bottom: 20px;">Week average</h3>
+        <i class="fa-solid fa-temperature-half"></i><h3 style="display: inline; margin-left: 10px;"  id="avg_temp_week"></h3><br>
+        <i class="fa-solid fa-droplet"></i><h3 style="display: inline; margin-left: 10px;"  id="avg_humidity_week"></h3>
       </div>
       <div class="day_avg">
-        <h3>Day average</h3>
-        <h3 id="avg_temp"></h3>
-        <h3 id="avg_humidity"></h3>
+        <h3 style="margin-bottom: 20px;">Day average</h3>
+        <i class="fa-solid fa-temperature-half"></i><h3 style="display: inline; margin-left: 10px;"  id="avg_temp"></h3><br>
+        <i class="fa-solid fa-droplet"></i><h3 style="display: inline; margin-left: 10px;"  id="avg_humidity"></h3>
       </div>
     </div>
-    <div>
+    <!-- <div>
       <button id="btn_press">Press</button>
-    </div>
+    </div> -->
     <!-- <div style="background-color: aquamarine;" id="container_data"></div> -->
     <div class="btn_data_container">
-      <button id="btn_day" class="btn_class">Today</button>
+      <button id="btn_day" class="btn_class active">Today</button>
       <button id="btn_week" class="btn_class">Week</button>
     </div>
+    <!-- <div>J</div> -->
     <div class="data_container">
       <div id="week_data" class="week_data">
         <div class="grafic_data">
@@ -95,3 +96,4 @@
 <script src="javascript/heating_status.js"></script>
 <script src="javascript/average_temp.js"></script>
 <script src="javascript/charts_day.js"></script>
+<script src="https://kit.fontawesome.com/61185e6dd2.js" crossorigin="anonymous"></script>

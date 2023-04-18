@@ -12,10 +12,17 @@ btn_day.addEventListener("click", () => {
 
     week_data.style.display = 'none';
     day_data.style.display = 'block';
+
+    btn_week.classList.remove("active");
+    btn_day.classList.add("active");
+
 })
 
 btn_week.addEventListener("click", () => {
     console.log("week");
+
+    btn_week.classList.add("active");
+    btn_day.classList.remove("active");
 
     week_data.style.display = 'block';
     day_data.style.display = 'none';
