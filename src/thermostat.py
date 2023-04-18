@@ -22,4 +22,7 @@ class Thermostat():
         GPIO.output(self.relay_pin, GPIO.LOW)   # if relay_pin is set to LOW means that the central heating is off
 
     def heating_status(self):
-        ...
+        if GPIO.input(self.relay_pin):
+            print("Relay is on")
+        else:
+            print("Relay is off")
