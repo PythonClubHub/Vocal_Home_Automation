@@ -16,7 +16,7 @@ class Thermostat():
         self.threshold_temperature = new_threshold_temperature
 
     def heating_on(self):
-        ...
+        GPIO.output(self.relay_pin, GPIO.HIGH)  # if relay_pin is set to HIGH means that the central heating is on
 
     def heating_off(self):
-        ...
+        GPIO.output(self.relay_pin, GPIO.LOW)   # if relay_pin is set to LOW means that the central heating is off
