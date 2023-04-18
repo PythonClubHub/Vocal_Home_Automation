@@ -9,3 +9,9 @@ class Thermostat():
 
     def set_temperature_threshold(self, new_threshold_temperature):
         self.threshold_temperature = new_threshold_temperature
+
+    def heating_on(self):
+        ...
+
+    def heating_off(self):
+        ...
