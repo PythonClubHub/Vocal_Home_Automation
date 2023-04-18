@@ -1,6 +1,26 @@
 let temp_day = [];
 let humidity_day = [];
 
+const btn_day = document.getElementById("btn_day");
+const btn_week = document.getElementById("btn_week");
+
+const week_data = document.getElementById("week_data");
+const day_data = document.getElementById("day_data");
+
+btn_day.addEventListener("click", () => {
+    console.log("day");
+
+    week_data.style.display = 'none';
+    day_data.style.display = 'block';
+})
+
+btn_week.addEventListener("click", () => {
+    console.log("week");
+
+    week_data.style.display = 'block';
+    day_data.style.display = 'none';
+})
+
 const fecthDayData = async () => {
     try {
 
@@ -19,12 +39,12 @@ const fecthDayData = async () => {
         const ctx = document.getElementById("myChart3");
         const ctxHumidity = document.getElementById("myChart4");
 
-        new Chart(ctx, {
+        new Chart(ctxHumidity, {
             type: 'bar',
             data: {
             labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],
             datasets: [{
-                label: 'grades',
+                label: 'humidity',
                 data: humidity_day,
                 borderWidth: 2,
                 backgroundColor: 'rgba(245, 0, 0, 0.52)',
@@ -41,7 +61,7 @@ const fecthDayData = async () => {
             }
         })
 
-        new Chart(ctxHumidity, {
+        new Chart(ctx, {
             type: 'bar',
             data: {
             labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],

@@ -60,18 +60,28 @@
     <div>
       <button id="btn_press">Press</button>
     </div>
-    <div style="background-color: aquamarine;" id="container_data"></div>
-    <div class="grafic_data">
-      <canvas id="myChart"></canvas>
+    <!-- <div style="background-color: aquamarine;" id="container_data"></div> -->
+    <div class="btn_data_container">
+      <button id="btn_day" class="btn_class">Today</button>
+      <button id="btn_week" class="btn_class">Week</button>
     </div>
-    <div class="grafic_data">
-      <canvas id="myChart2"></canvas>
-    </div>
-    <div class="grafic_data">
-      <canvas id="myChart3"></canvas>
-    </div>
-    <div class="grafic_data">
-      <canvas id="myChart4"></canvas>
+    <div class="data_container">
+      <div id="week_data" class="week_data">
+        <div class="grafic_data">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="grafic_data">
+          <canvas id="myChart2"></canvas>
+        </div>
+      </div>
+      <div id="day_data" class="day_data">
+        <div class="grafic_data">
+          <canvas id="myChart3"></canvas>
+        </div>
+        <div class="grafic_data">
+          <canvas id="myChart4"></canvas>
+        </div>
+      </div>
     </div>
   </div>
 </body>

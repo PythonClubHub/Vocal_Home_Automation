@@ -154,6 +154,34 @@
     background-color: aqua;
 }
 
+.data_container{
+    background-color: red;
+
+    position: relative;
+}
+
+.week_data{
+    background-color: antiquewhite;
+
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+
+.day_data{
+    background-color: aqua;
+
+    position: absolute;
+    width: 100%;
+}
+
+.btn_data_container{
+    background-color: #0dd157;
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
 @media screen and (max-width: 680px) {
     .cont{
         flex-direction: column;
