@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import dht22
+import sensor
 
 class Thermostat():
     def __init__(self):
@@ -8,7 +8,7 @@ class Thermostat():
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         GPIO.setup(self.relay_pin,GPIO.OUT)
-        self.sensor = dht22.dht_sensor()
+        self.sensor = sensor.dht_sensor()
 
 
     def get_temperature_threshold(self):
