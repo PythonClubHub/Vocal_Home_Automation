@@ -26,3 +26,6 @@ class Thermostat():
             print("Relay is on")
         else:
             print("Relay is off")
+
+    def compare_temp_with_threshold(self):
+        ...
