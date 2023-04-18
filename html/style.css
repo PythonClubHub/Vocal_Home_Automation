@@ -85,6 +85,7 @@
 
 .cont{
     margin-top: 20px;
+    margin: 20px;
 
     display: flex;
     gap: 0px;
@@ -139,19 +140,60 @@
 }
 
 .average_container{
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
+    margin: 70px 20px;
+    padding: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.514);
+    /* padding: 20px; */
 
     display: flex;
 }
 
 .week_avg{
     width: 50%;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    border-right: 2px solid rgba(0, 0, 0, 0.514);
+
+    text-align: center;
 }
 
 .day_avg{
     width: 50%;
-    background-color: aqua;
+    /* background-color: aqua; */
+    text-align: center;
+}
+
+.data_container{
+    /* background-color: red; */
+
+    position: relative;
+}
+
+.week_data{
+    /* background-color: antiquewhite; */
+
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+
+.day_data{
+    /* background-color: aqua; */
+
+    position: absolute;
+    width: 100%;
+}
+
+.btn_data_container{
+    /* background-color: #0dd157; */
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+.active{
+    background-color: rgb(255, 217, 0);
+    color: black;
 }
 
 @media screen and (max-width: 680px) {
@@ -160,7 +202,22 @@
     }
 
     #details_border{
-        border-top: 2px solid black;
+        border-top: 2px solid rgba(0, 0, 0, 0.499);
+        
         border-left: 0px;
+    }
+
+    .average_container{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .week_avg{
+        width: 100%;
+        border-right: 0px;
+    }
+    
+    .day_avg{
+        width: 100%;
     }
 }
