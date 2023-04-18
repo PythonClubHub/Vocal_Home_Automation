@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      body {
+        background-color: #EDF7F6;
+      }
+
+      .login-box {
+        background-color: #D1D1D1;
+        padding: 60px 40px 80px 40px;
+        margin: 50px auto;
+        width: 300px;
+      }
+
+      .login-box form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .login-box input[type="text"],
+      .login-box input[type="password"] {
+        flex: 1;
+        border: none;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      .login-box input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <form>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Log In">
+      </form>
+    </div>
+  </body>
+</html>
