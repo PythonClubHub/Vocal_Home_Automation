@@ -133,9 +133,9 @@ dmypy.json
 *.txt
 *.log
 # test/
-database/data.db
+# database/data.db
 
 # dont't ignore
 !License.txt
 !photo.png
-data.db
+# data.db
