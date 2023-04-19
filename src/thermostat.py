@@ -31,16 +31,35 @@ class Thermostat():
         self.threshold_temperature = new_threshold_temperature
 
     def heating_on(self):
-        GPIO.output(self.relay_pin, GPIO.HIGH)  # if relay_pin is set to HIGH means that the central heating is on
+        # GPIO.output(self.relay_pin, GPIO.HIGH)  # if relay_pin is set to HIGH means that the central heating is on
+        return "the heating is on"
 
     def heating_off(self):
-        GPIO.output(self.relay_pin, GPIO.LOW)   # if relay_pin is set to LOW means that the central heating is off
+        # GPIO.output(self.relay_pin, GPIO.LOW)   # if relay_pin is set to LOW means that the central heating is off
+        return "the heating is off"
 
     def heating_status(self):
-        if GPIO.input(self.relay_pin):
-            print("Relay is on")
-        else:
-            print("Relay is off")
+        # if GPIO.input(self.relay_pin):
+        #     print("Relay is on")
+        # else:
+        #     print("Relay is off")
+        connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+
+        # create a cursor object
+        c = connection.cursor()
+
+
+        # insert data into the table
+        cursor = c.execute("SELECT status FROM temp_table")
+        row = c.fetchall()
+
+        heating_status = row[0][0]
+
+        if heating_status == 1:
+            return "The heating is ON"
+        
+        elif heating_status == 0:
+            return "The heating status is OFF"
 
     def compare_temp_with_threshold(self):
         print(f"Temperature {self.sensor.get_t}, threshold {self.threshold_temperature}")
