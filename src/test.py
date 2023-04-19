@@ -9,3 +9,6 @@ print(value)
 
 status = thermostat.heating_status()
 print(status)
+
+data = thermostat.compare_temp_with_threshold()
+print(data)

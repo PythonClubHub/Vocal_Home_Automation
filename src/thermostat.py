@@ -62,4 +62,33 @@ class Thermostat():
             return "The heating status is OFF"
 
     def compare_temp_with_threshold(self):
-        print(f"Temperature {self.sensor.get_t}, threshold {self.threshold_temperature}")
+        # print(f"Temperature {self.sensor.get_t}, threshold {self.threshold_temperature}")
+
+        connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+
+        # create a cursor object
+        c = connection.cursor()
+
+
+        # insert data into the table
+        cursor = c.execute("SELECT temperature FROM temp_table")
+        row = c.fetchall()
+
+        temperature = row[0][0]
+
+        cursor = c.execute("SELECT temperature FROM temperature ORDER BY id DESC LIMIT 1;")
+
+        row = cursor.fetchall()
+
+        last_temp = row[0][0]
+
+        if(temperature < last_temp):
+            return f"The heating will STOP ({temperature} < {last_temp})"
+        
+        elif(temperature > last_temp):
+            return f"The heating will START ({temperature} > {last_temp})"
+
+        else:
+            return f"The temperature is perfect ({temperature} = {last_temp})"
+
+        # return temperature, last_temp
