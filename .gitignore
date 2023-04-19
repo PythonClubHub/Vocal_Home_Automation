@@ -129,10 +129,10 @@ dmypy.json
 .pyre/
 
 # my ignore
-Test.*
+# Test.*
 *.txt
 *.log
-test/
+# test/
 database/data.db
 
 # dont't ignore
