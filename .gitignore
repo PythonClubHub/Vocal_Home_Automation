@@ -129,13 +129,16 @@ dmypy.json
 .pyre/
 
 # my ignore
-# Test.*
+Test.*
 *.txt
 *.log
-# test/
-# database/data.db
+test/
+test.py
+src/routes/data.db
+data.db
+dataTest.db
 
 # dont't ignore
 !License.txt
 !photo.png
-# data.db
+
