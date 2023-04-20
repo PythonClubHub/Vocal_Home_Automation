@@ -3,9 +3,48 @@ from flask_cors import CORS
 import logging
 import sqlite3
 from datetime import date
+import os.path
+
+logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 
 app = Flask(__name__)
 CORS(app)
+
+database_path = 'data.db'
+
+if os.path.isfile(database_path):
+    logging.debug("File exists")
+
+else:
+    logging.debug("The file doesn't exist")
+
+    connection = sqlite3.connect("data2.db")
+
+    cursor = connection.cursor()
+
+    cursor.execute('''CREATE TABLE IF NOT EXISTS temperature
+                 (id INTEGER PRIMARY KEY,
+                    date TEXT,
+                    hour TEXT, 
+                    temeperature INTEGER,
+                    humidity INTEGER
+    )''')
+
+    cursor.execute('''CREATE TABLE IF NOT EXISTS average_data
+             (id INTEGER PRIMARY KEY,
+                date TEXT,
+                avg_temeperature INTEGER,
+                avg_humidity INTEGER
+    )''')
+
+    cursor.execute('''CREATE TABLE IF NOT EXISTS temp_table
+             (id INTEGER PRIMARY KEY,
+                temeperature INTEGER,
+                status INTEGER
+    )''')
+
+    connection.commit()
+    connection.close()
 
 
 @app.route('/', methods = ['GET'])
