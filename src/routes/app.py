@@ -11,8 +11,9 @@ CORS(app)
 @app.route('/', methods = ['GET'])
 def home():
     # return jsonify({'message': 'home'})
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    # connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -29,8 +30,9 @@ def home():
 @app.route('/data', methods = ['GET'])
 def data():
     # return jsonify({'message': 'home'})
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -49,7 +51,8 @@ def data():
 def change_temp():
     temperature = request.json.get('temperature')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -67,7 +70,8 @@ def change_temp():
 def turn_on():
     status = request.json.get('on')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -84,7 +88,8 @@ def turn_on():
 def turn_off():
     status = request.json.get('off')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -107,7 +112,8 @@ def date_temp():
     logging.debug(f"current date = {current_date}")
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -124,7 +130,8 @@ def date_temp():
 def week_data():
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -140,7 +147,8 @@ def week_data():
 def temp_day():
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
