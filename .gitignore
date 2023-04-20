@@ -133,12 +133,9 @@ Test.*
 *.txt
 *.log
 test/
-test.py
-src/routes/data.db
-data.db
-dataTest.db
+database/data.db
 
 # dont't ignore
 !License.txt
 !photo.png
-
+# data.db
