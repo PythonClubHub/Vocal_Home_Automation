@@ -133,9 +133,9 @@ dmypy.json
 *.txt
 *.log
 # test/
-# database/data.db
+src/routes/data.db
 
 # dont't ignore
 !License.txt
 !photo.png
-# data.db
+# C:\Users\uif94707\Documents\Python\Vocal_Home_Automation\Vocal_Home_Automation\src\routes\data.db
