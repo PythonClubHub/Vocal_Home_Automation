@@ -16,12 +16,12 @@ def insert_data():
 
     # get a random temperature and humidity --------------
     # random_temp = random.randint(0, 40)
-    random_temp = senzor.get_t()
-    logging.debug(f"random temp = {random_temp}")
+    sensor_temperature = senzor.get_t()
+    logging.debug(f"random temp = {sensor_temperature}")
 
     # random_humidity = random.randint(50, 100)
-    random_humidity = senzor.get_h()
-    logging.debug(f"random humidity = {random_humidity}")
+    sensor_humidity = senzor.get_h()
+    logging.debug(f"random humidity = {sensor_humidity}")
 
     # get a random time and date ------------------------------
     now = datetime.now()
@@ -51,7 +51,7 @@ def insert_data():
     #         )''')
 
     #insert data into the table
-    c.execute("INSERT INTO temperature (date, hour, temperature, humidity) VALUES (?, ? , ?, ?)", (current_date, current_time, random_temp, random_humidity))
+    c.execute("INSERT INTO temperature (date, hour, temperature, humidity) VALUES (?, ? , ?, ?)", (current_date, current_time, sensor_temperature, sensor_humidity))
 
     # c.execute("DELETE FROM temperature WHERE id >= 84 AND id <= 85")
     # c.execute("DELETE FROM temperature")
