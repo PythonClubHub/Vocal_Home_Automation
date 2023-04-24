@@ -3,56 +3,16 @@ from flask_cors import CORS
 import logging
 import sqlite3
 from datetime import date
-import os.path
-
-logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 
 app = Flask(__name__)
 CORS(app)
-
-database_path = 'data.db'
-
-if os.path.isfile(database_path):
-    logging.debug("File exists")
-
-else:
-    logging.debug("The file doesn't exist")
-
-    connection = sqlite3.connect("data2.db")
-
-    cursor = connection.cursor()
-
-    cursor.execute('''CREATE TABLE IF NOT EXISTS temperature
-                 (id INTEGER PRIMARY KEY,
-                    date TEXT,
-                    hour TEXT, 
-                    temeperature INTEGER,
-                    humidity INTEGER
-    )''')
-
-    cursor.execute('''CREATE TABLE IF NOT EXISTS average_data
-             (id INTEGER PRIMARY KEY,
-                date TEXT,
-                avg_temeperature INTEGER,
-                avg_humidity INTEGER
-    )''')
-
-    cursor.execute('''CREATE TABLE IF NOT EXISTS temp_table
-             (id INTEGER PRIMARY KEY,
-                temeperature INTEGER,
-                status INTEGER
-    )''')
-
-    connection.commit()
-    connection.close()
 
 
 @app.route('/', methods = ['GET'])
 def home():
     # return jsonify({'message': 'home'})
-    # connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -69,9 +29,8 @@ def home():
 @app.route('/data', methods = ['GET'])
 def data():
     # return jsonify({'message': 'home'})
-    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
 
     cursor = connection.cursor()
 
@@ -90,8 +49,7 @@ def data():
 def change_temp():
     temperature = request.json.get('temperature')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
 
     cursor = connection.cursor()
 
@@ -109,8 +67,7 @@ def change_temp():
 def turn_on():
     status = request.json.get('on')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
 
     cursor = connection.cursor()
 
@@ -127,8 +84,7 @@ def turn_on():
 def turn_off():
     status = request.json.get('off')
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
 
     cursor = connection.cursor()
 
@@ -151,8 +107,7 @@ def date_temp():
     logging.debug(f"current date = {current_date}")
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
 
     cursor = connection.cursor()
 
@@ -169,8 +124,7 @@ def date_temp():
 def week_data():
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
 
     cursor = connection.cursor()
 
@@ -186,8 +140,7 @@ def week_data():
 def temp_day():
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    #connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("data.db")
+    connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
 
     cursor = connection.cursor()
 
@@ -198,6 +151,3 @@ def temp_day():
     connection.close()
     return jsonify(rows)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)

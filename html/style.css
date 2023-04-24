@@ -68,6 +68,7 @@
 
 .main_container{
     background-color: aliceblue;
+    margin-bottom: 50px;
 
 }
 
@@ -165,6 +166,7 @@
 
 .data_container{
     /* background-color: red; */
+    margin-bottom: 50px;
 
     position: relative;
 }
