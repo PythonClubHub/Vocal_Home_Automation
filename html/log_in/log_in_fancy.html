@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        background-color: #EDF7F6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .video-background video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      .login-box {
+        background-color: rgba(209, 209, 209, 0.65);
+        padding: 60px 40px 100px 40px;
+        margin: 100px auto 0 auto;
+        width: 300px;
+        box-sizing: border-box;
+      }
+
+      .login-box form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .login-box input[type="text"],
+      .login-box input[type="password"] {
+        flex: 1;
+        border: none;
+        padding: 10px;
+        margin-bottom: 20px;
+        height: 30px;
+      }
+
+      .login-box input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-background">
+      <video autoplay loop muted>
+        <source src="log_in_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="login-box">
+      <form>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Log In">
+      </form>
+    </div>
+  </body>
+</html>

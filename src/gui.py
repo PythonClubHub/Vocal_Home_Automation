@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QWidget, QPushButton, QLabel
 from variables import temperature, room_temperature, heat
 
+import thermostat
 import logging
 
 var_temp = 10
@@ -18,6 +19,9 @@ class Gui(QWidget):
         self.temperature = temperature
         self.room_temperature = room_temperature
         self.heat = heat
+        self.thermostat = thermostat.Thermostat()
+
+        self.temp_thermostat = self.thermostat.get_temperature_threshold()
 
 
         self.btn = QPushButton("", self)
@@ -42,12 +46,15 @@ class Gui(QWidget):
         set_label.move(50,50)
         set_label.setStyleSheet("font-size: 20px")
 
+        test_label = QLabel(f"Test: {self.temp_thermostat}", self)
+        test_label.move(100,400)
+        test_label.setStyleSheet("font-size: 20px")
 
         set_label = QLabel("Room:", self)
         set_label.move(350,50)
         set_label.setStyleSheet("font-size: 20px")
 
-        self.room_temperature_label = QLabel(f"{room_temperature} C", self)
+        self.room_temperature_label = QLabel(f"{self.temp_thermostat} C", self)
         self.room_temperature_label.move(420, 50)
         self.room_temperature_label.setStyleSheet("font-size: 20px")
 
