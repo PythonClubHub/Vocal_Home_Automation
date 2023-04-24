@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 
 today = date.today()
 # current_date = today.strftime("%d.%m.%Y")
-current_date = '28.05.2023'
+current_date = '19.04.2023'
 logging.debug(f"current date = {current_date}")
 
 # connection = sqlite3.connect('database/data.db')
@@ -17,12 +17,8 @@ def average_calling():
 # create a cursor object
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
     # connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-<<<<<<< HEAD:src/tables/average_calling.py
-    connection = sqlite3.connect('database/data.db')
-=======
     connection = sqlite3.connect("data.db")
 
->>>>>>> 2895d137364809a282918e70c64b907ce44d585b:src/routes/average_calling.py
 
     # create a cursor object
     c = connection.cursor()

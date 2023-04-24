@@ -133,7 +133,8 @@ Test.*
 *.txt
 *.log
 test/
-database/data.db
+data.db
+dataTest.db
 
 # dont't ignore
 !License.txt
