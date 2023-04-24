@@ -30,12 +30,13 @@ def insert_data():
 
     today = date.today()
     # current_date = today.strftime("%d.%m.%Y")
-    current_date = '22.04.2023'
+    current_date = '31.04.2023'
     logging.debug(f"current date = {current_date}")
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
     # connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
-    connection = sqlite3.connect("C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/src/routes/data.db")
+    # connection = sqlite3.connect("C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/src/routes/data.db")
+    connection = sqlite3.connect("/home/alex/Vocal_Home_Automation/src/routes/data.db")
 
 
     # create a cursor object
