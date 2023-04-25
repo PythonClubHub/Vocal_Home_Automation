@@ -15,12 +15,12 @@ logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 def insert_data():
 
     # get a random temperature and humidity --------------
-    # random_temp = random.randint(0, 40)
-    random_temp = senzor.get_t()
+    random_temp = random.randint(0, 40)
+    # random_temp = senzor.get_t()
     logging.debug(f"random temp = {random_temp}")
 
-    # random_humidity = random.randint(50, 100)
-    random_humidity = senzor.get_h()
+    random_humidity = random.randint(50, 100)
+    # random_humidity = senzor.get_h()
     logging.debug(f"random humidity = {random_humidity}")
 
     # get a random time and date ------------------------------
@@ -30,7 +30,7 @@ def insert_data():
 
     today = date.today()
     # current_date = today.strftime("%d.%m.%Y")
-    current_date = '22.04.2023'
+    current_date = '01.05.2023'
     logging.debug(f"current date = {current_date}")
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
@@ -46,7 +46,7 @@ def insert_data():
     #              (id INTEGER PRIMARY KEY,
     #                 date TEXT,
     #                 hour TEXT, 
-    #                 temeperature INTEGER,
+    #                 temperature INTEGER,
     #                 humidity INTEGER
     #         )''')
 

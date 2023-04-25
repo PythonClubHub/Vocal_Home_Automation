@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 
 today = date.today()
 # current_date = today.strftime("%d.%m.%Y")
-current_date = '22.04.2023'
+current_date = '01.05.2023'
 logging.debug(f"current date = {current_date}")
 
 # connection = sqlite3.connect('database/data.db')

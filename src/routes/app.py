@@ -147,7 +147,7 @@ def turn_off():
 def date_temp():
     today = date.today()
     # current_date = today.strftime("%d.%m.%Y")
-    current_date = '19.04.2023'
+    current_date = '25.04.2023'
     logging.debug(f"current date = {current_date}")
 
     # connection = sqlite3.connect('C:/Users/Alex/OneDrive/Documente/PythonClubRepos/Vocal_Home_Automation/Vocal_Home_Automation/database/data.db')
