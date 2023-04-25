@@ -21,13 +21,18 @@ const fecth_status = async () => {
             console.log("on");
             btn_on.disabled = true;
             btn_on.style.backgroundColor = "#0dd15877";
+            status_heating.textContent = 'The heating is ON';
         }
 
         if(heating_status == 0){
             console.log("off");
             btn_off.disabled = true;
             btn_off.style.backgroundColor = "#fb414480";
+            status_heating.textContent = 'The heating is OFF';
         }
+
+        counter.textContent = `${data2[0][1]} ° C `;
+
         
     } catch (error) {
         console.log(error);
