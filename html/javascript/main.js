@@ -20,6 +20,54 @@ const fecth_setTemperature = async () => {
         temp_text.textContent = `${lastElement[2]} ° C `;
         humidity_text.textContent = `${lastElement[3]} %`;
 
+        if(lastElement[2] > 20){
+            console.log('off');
+            heating_status = 0
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({ off })
+            }
+
+            try {
+                const res = await fetch("http://127.0.0.1:5000/turn_off", options);
+                const data = await res.json();
+
+                console.log(data);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        if(lastElement[2] <= 20){
+            console.log('on');
+            heating_status = 1  
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+        
+                body: JSON.stringify({ on })
+            }
+        
+            try {
+                const res = await fetch("http://127.0.0.1:5000/turn_on", options);
+                const data = await res.json();
+        
+                console.log(data);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
         const res2 = await fetch("http://127.0.0.1:5000/data");
         const data2 = await res2.json();
 
