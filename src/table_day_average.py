@@ -3,26 +3,26 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 
-# connection = sqlite3.connect('database/data.db')
-connection = sqlite3.connect("data.db")
+connection = sqlite3.connect('C:/Users/uif94707/Documents/Python/Vocal_Home_Automation/Vocal_Home_Automation/src/routes/data.db')
+# connection = sqlite3.connect("data.db")
 
 
 # create a cursor object
 c = connection.cursor()
 
 # execute a query to create a new table
-# c.execute('''CREATE TABLE IF NOT EXISTS average_data
-#              (id INTEGER PRIMARY KEY,
-#                 date TEXT,
-#                 avg_temeperature INTEGER,
-#                 avg_humidity INTEGER
-#         )''')
+c.execute('''CREATE TABLE IF NOT EXISTS day_average
+             (id INTEGER PRIMARY KEY,
+                date TEXT,
+                avg_temperature INTEGER,
+                avg_humidity INTEGER
+        )''')
 
 #insert data into the table
 # c.execute("INSERT INTO day_average (date, avg_temeperature, avg_humidity) VALUES ('17.04.2023', 20, 50)")
 # c.execute(("DELETE FROM day_average"))
 # c.execute("DELETE FROM day_average WHERE id = 4")
-c.execute("UPDATE day_average SET date = '20.04.2023' WHERE id = 10" )
+# c.execute("UPDATE day_average SET date = '20.04.2023' WHERE id = 10" )
 
 # retrieve data from the table
 # c.execute("SELECT * FROM temperature")
