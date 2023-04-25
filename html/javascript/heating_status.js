@@ -1,5 +1,6 @@
 const btn_on = document.getElementById("btn_on");
 const btn_off = document.getElementById("btn_off");
+const counter = document.getElementById("counter");
 
 let on = 1;
 let off = 0;
@@ -22,6 +23,7 @@ const fecth_status = async () => {
             btn_on.disabled = true;
             btn_on.style.backgroundColor = "#0dd15877";
             status_heating.textContent = 'The heating is ON';
+            
         }
 
         if(heating_status == 0){
