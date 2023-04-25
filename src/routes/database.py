@@ -71,6 +71,6 @@ def insert_data():
 def timer_insert():
     while True:
         insert_data()
-        time.sleep(2)
+        time.sleep(1)
 
 timer_insert()
