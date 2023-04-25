@@ -135,8 +135,8 @@ Test.*
 test/
 data.db
 dataTest.db
+src/routes/data.db
 
 # dont't ignore
 !License.txt
 !photo.png
-# data.db
