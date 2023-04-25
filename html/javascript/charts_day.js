@@ -43,7 +43,7 @@ const fecthDayData = async () => {
 
         console.log(temp_day);
 
-        const ctx = document.getElementById("myChart3");
+        const ctxTemperature = document.getElementById("myChart3");
         const ctxHumidity = document.getElementById("myChart4");
 
         new Chart(ctxHumidity, {
@@ -68,7 +68,7 @@ const fecthDayData = async () => {
             }
         })
 
-        new Chart(ctx, {
+        new Chart(ctxTemperature, {
             type: 'bar',
             data: {
             labels: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00'],

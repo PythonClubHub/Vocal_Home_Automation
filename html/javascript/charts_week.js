@@ -1,6 +1,8 @@
-
 let all_humidity = [];
 let humidity = [];
+
+let all_temperatues = [];
+let temperatures = [];
 
 const fetchData2 = async () => {
     try {
@@ -13,14 +15,21 @@ const fetchData2 = async () => {
 
         humidity = all_humidity.slice(-7);
 
+        data.forEach(item => {
+            all_temperatues.push(item[2]);
+        });
+
+        temperatures = all_temperatues.slice(-7);
+
         // console.log(data);
         // console.log(all_humidity);
         console.log(`humidity_week_data ${humidity}`);
         console.log(humidity);
 
-        const ctx = document.getElementById("myChart2");
+        const chart_week_humidity = document.getElementById("myChart2");
+        const chart_week_temperature = document.getElementById("myChart");
 
-        new Chart(ctx, {
+        new Chart(chart_week_humidity, {
             type: 'bar',
             data: {
             labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -41,6 +50,26 @@ const fetchData2 = async () => {
             }
             }
         });
+
+        new Chart(chart_week_temperature, {
+            type: 'bar',
+            data: {
+            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            datasets: [{
+                label: 'grades',
+                data: temperatures,
+                borderWidth: 2
+            }]
+            },
+            options: {
+            responsive: true,
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
         
     } catch (error) {
         console.log(error);
@@ -48,4 +77,3 @@ const fetchData2 = async () => {
 }
 
 fetchData2()
-

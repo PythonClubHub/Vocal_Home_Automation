@@ -1,20 +1,18 @@
 
-const btn_set = document.getElementById("btn_set");
-const ok_btn = document.getElementById("ok_btn");
-const btn_test = document.getElementById("btn_test");
-// const input_temp = document.getElementById("temperatura")
+// here we set the temperatures with the input and the buttons OK and SET
 
-const input_temp = document.getElementById("temperatura");
+const ok_btn = document.getElementById("ok_btn"); // OK button
+const btn_set = document.getElementById("btn_set"); // SET button
+const input_temp = document.getElementById("input_temperatura"); // INPUT for to set the temperature
 
-
-let temperature = 0
+let temperature = 0  // this variable will store the value of the input
 
 input_temp.addEventListener("change", () => {
     btn_set.style.backgroundColor = "#0274d8ba";
     btn_set.disabled = true;
 })
 
-
+// the event CLICK of the OK button
 ok_btn.addEventListener("click", () => {
     temperature = parseInt(input_temp.value);
     console.log(temperature);
@@ -22,6 +20,8 @@ ok_btn.addEventListener("click", () => {
     btn_set.disabled = false;
 })
 
+
+// the event CLICK of the SET button
 btn_set.addEventListener("click", async (e) => {
     console.log("btn_set clicked!");
 
